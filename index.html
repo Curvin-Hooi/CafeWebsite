@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- @vite('resources/css/style.css')
+    @vite('resources/css/app.css') -->
+    <script src="https://kit.fontawesome.com/4e6357fa11.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="">
+    <nav>
+        <div>FIE</div>
+        <div class="Navlinks">
+            <ul>
+                <a href="">
+                    <li>Home</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="#About">
+                    <li>About</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="#Menu">
+                    <li>Menu</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="#Gallery">
+                    <li>Gallery</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="#Reservation">
+                    <li>Reservation</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="#Contact">
+                    <li>Contact</li>
+                </a>
+
+            </ul>
+            <ul>
+                <li id="ReserveTable">Reserve A Table</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero section">
+        <!-- <img src="images/coffee.png" alt="Food By Chef"> -->
+        <div class="herotext">
+            <p id="welcometxt">Welcome To FIE</p>
+            <h1>Good <span>Coffee</span> </h1>
+            <h1>Good <span>Mood</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam commodi sapiente dolorem!</p>
+            <div class="herobuttons">
+                <a href="#Menu"><button class="btns">View Menu</button></a>
+                <button class="btns">Watch Video</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-clock wavvy"></div>
+
+    <div class="bg-cream txt-brown section">
+
+        <div class="extra-info-container text-header">
+
+            <div class="extra-info">
+                <p><i class="fa-solid fa-mug-hot fa"></i></p>
+                <h5 class="text-header">Expert Baristas</h5>
+                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat porro
+                    totam a
+                    aspernatur ad, corporis
+                    officia.</p>
+            </div>
+
+            <!-- <div class="divider-Ver"></div> -->
+
+
+            <div class="extra-info">
+                <p><i class="fa-solid fa-leaf fa"></i></p>
+                <h5 class="text-header">Fresh & Natural</h5>
+                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat porro
+                    totam a
+                    aspernatur ad, corporis
+                    officia.</p>
+            </div>
+
+            <!-- <div class="divider-Ver"></div> -->
+
+            <div class="extra-info">
+                <p><i class="fa-solid fa-heart fa"></i></p>
+                <h5 class="text-header">Made With Love</h5>
+                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat porro
+                    totam a
+                    aspernatur ad, corporis
+                    officia.</p>
+            </div>
+
+        </div>
+
+        <div class="divider-Ver"></div>
+
+        <div class="MenuContainer  section">
+            <h2 class="text-header">OUR MENU</h2>
+            <!-- {{-- <div class="divider-Ver"></div> --}} -->
+            <div class="choicecontainer">
+                <li class="choice choiceactive" onclick="AllMenuItems()">All</li>
+                <li class="choice" onclick="SortMenuItems(1, 1)">Coffee</li>
+                <li class="choice" onclick="SortMenuItems(2, 2)">Cold</li>
+                <li class="choice" onclick="SortMenuItems(3, 3)">Dessert</li>
+                <li class="choice" onclick="SortMenuItems(4, 4)">Special</li>
+            </div>
+
+            <div class="menuitemcontainer">
+                <!-- <i class="fa-solid fa-circle-chevron-left arrowkey"></i> -->
+                <div class="menuitemscontained" id="menuitemscontained">
+
+                    <div class="card">
+                        <div class="">
+                            <h4 class=""> {{ $menuitem['name'] }} </h4>
+                        </div>
+                        <p class="txt-muted"> {{ $menuitem['desc'] }} </p>
+                        <h4 class="">$ {{ $menuitem['price'] }}0 </h4>
+                    </div>
+
+                </div>
+                <!-- <i class="fa-solid fa-circle-chevron-right arrowkey"></i> -->
+            </div>
+
+            <!-- <div class="extra-info-container">
+                <button class="btns">VIEW MORE</button>
+            </div> -->
+
+        </div>
+
+        <!-- {{-- <div class="text-center flex flex-col content-center justify-between">
+            <h1>OUR STORY</h1>
+            <div class="divider"></div>
+            <div class="AboutContainer">
+                <img src="./assets/RestaurantInterior.jpg" alt="" class="AboutImg">
+                <div class="AboutTxt">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis dicta, unde fugiat cupiditate
+                        nobis explicabo est temporibus praesentium deserunt quam modi nam corporis odit ullam. Quasi
+                        ipsam,
+                        totam dolor rem minus illum recusandae, voluptas modi esse dicta, amet nihil omnis tenetur.
+                        Ratione
+                        aperiam error, quaerat, tenetur odit mollitia harum numquam sint at, quidem minus laborum quis.
+                    </p>
+                    <button class="btns">View More</button>
+                </div>
+            </div>
+        </div> --}} -->
+
+    </div>
+
+    <div id="ClockDown" class="section wavvy">
+        <h2 class="text-header">UPCOMING EVENTS</h2>
+        <div class="" id="clockdivcontainer" data-value="{{ $event->datetime }}">
+
+            <div class="countdown">
+                <h4 class="" id="daysdiv">00</h4>
+                <p>DAYS</p>
+            </div>
+            <div class="countdown">
+                <h4 class="" id="hoursdiv">00</h4>
+                <p>HOURS</p>
+            </div>
+            <div class="countdown">
+                <h4 class="" id="mintuessdiv">00</h4>
+                <p>MINS</p>
+            </div>
+            <div class="countdown">
+                <h4 class="" id="secondsdiv">00</h4>
+                <p>SECS</p>
+            </div>
+        </div>
+        <div id="clocktxt">
+            <h3>Laura's Birthday</h3>
+            <p>The birth of a dear friend</p>
+
+            <div id="clockbuttons">
+                <button class="btns">Book Your Spot</button>
+                <button class="btns">View More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-cream txt-brown carousel-wrapper" id="carouselwrapper">
+
+    </div>
+
+    <div class="newsletter wavvy">
+        <div class="newsletter-contained section">
+            <div>
+                <h2 class="gold">Stay in the Loop</h2>
+                <p>Subscribe to our newsletter and get 10% off your first order.</p>
+            </div>
+            <div>
+                <form action="">
+                    <input type="email" name="email" id="" placeholder=" Your Email Address">
+                    <button class="subbtn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ClockCountDown.js"></script>
+    <script src="js/RatingCarousel.js"></script>
+    <script src="js/MenuItems.js"></script>
+</body>
+
+</html>
